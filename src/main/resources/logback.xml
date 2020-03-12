@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <layout class="ch.qos.logback.classic.PatternLayout">
+      <Pattern>
+        %d{yyyy-MM-dd HH:mm:ss} %-5level - %msg%n
+      </Pattern>
+    </layout>
+  </appender>
+  <statusListener class="ch.qos.logback.core.status.NopStatusListener" />
+  <root level="error">
+    <appender-ref ref="STDOUT" />
+  </root>
+  <logger name="ch.qos.logback" level="OFF" additivity="false" />
+  <logger name="de.mobilcom.dpvo.github.GithubController" level="info" additivity="true" />   
+</configuration>
