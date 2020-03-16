@@ -164,7 +164,7 @@
                     <execution>
                     <goals>
                     <goal>deploy</goal>
-                    </goal>
+                    </goals>
                     </execution>
 			    </executions>
             </plugin>
