@@ -160,12 +160,14 @@
                 <groupId>com.jakewharton</groupId>
                 <artifactId>github-deploy-maven-plugin</artifactId>
                 <version>1.0.0</version>
+				<executions>
                     <execution>
                     <goals>
                     <goal>deploy</goal>
                     </goal>
                     </execution>
+			    </executions>
             </plugin>
-			</plugins>
+		</plugins>
 	</build>
 </project>
