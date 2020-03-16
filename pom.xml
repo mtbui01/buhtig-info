@@ -24,13 +24,6 @@
 		<jib-maven-plugin.version>1.5.0</jib-maven-plugin.version>
 		<prometheus.version>0.8.1</prometheus.version>
 	</properties>
-    <distributionManagement>
-      <repository>
-       <id>github</id>
-       <name>GitHub OWNER Apache Maven Packages</name>
-       <url>https://maven.pkg.github.com/mtbui01/buhtig-info</url>
-       </repository>
-    </distributionManagement>	
 	<dependencies>
 		<dependency>
 			<groupId>io.rest-assured</groupId>
