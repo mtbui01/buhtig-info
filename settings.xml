@@ -17,11 +17,6 @@
           <releases><enabled>true</enabled></releases>
           <snapshots><enabled>true</enabled></snapshots>
         </repository>
-        <repository>
-          <id>github</id>
-          <name>GitHub OWNER Apache Maven Packages</name>
-          <url>https://maven.pkg.github.com/mtbui01/buhtig-info</url>
-        </repository>
       </repositories>
     </profile>
   </profiles>

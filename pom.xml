@@ -24,6 +24,20 @@
 		<jib-maven-plugin.version>1.5.0</jib-maven-plugin.version>
 		<prometheus.version>0.8.1</prometheus.version>
 	</properties>
+	<scm>
+		<developerConnection>scm:git:https://github.com/mtbui01/buhtig-info.git</developerConnection>
+		<connection>scm:git:https://github.com/mtbui01/buhtig-info.git</connection>
+		<url>https://github.com/mtbui01/buhtig-info.git</url>
+		<tag>HEAD</tag>
+	</scm>
+	
+    <distributionManagement>
+      <repository>
+       <id>github</id>
+       <name>GitHub OWNER Apache Maven Packages</name>
+	   <url>https://maven.pkg.github.com/freenet-group/repo-info</url>
+      </repository>
+    </distributionManagement>			
 	<dependencies>
 		<dependency>
 			<groupId>io.rest-assured</groupId>
@@ -146,21 +160,20 @@
 	<build>
 		<plugins>
 			<plugin>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version>
+				<configuration>
+					<arguments>-Dmaven.test.skip</arguments>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+					<preparationGoals>clean install</preparationGoals>
+                    <username>${server.username}</username>
+                    <password>${server.token}</password>					
+				</configuration>
+			</plugin>				
+			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-            <plugin>
-                <groupId>com.jakewharton</groupId>
-                <artifactId>github-deploy-maven-plugin</artifactId>
-                <version>1.0.0</version>
-				<executions>
-                    <execution>
-                    <goals>
-                    <goal>deploy</goal>
-                    </goals>
-                    </execution>
-			    </executions>
-            </plugin>
 		</plugins>
 	</build>
 </project>
