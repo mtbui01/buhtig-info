@@ -23,7 +23,7 @@ import de.mobilcom.dpvo.github.datamodel.Repository;
 public class GithubController {
 
   private static final Logger LOG = LoggerFactory.getLogger(GithubController.class);
-    
+    	
   private String serverUrl = "https://api.github.com";
   
   @Value("${username}")
@@ -72,6 +72,7 @@ public class GithubController {
     return repoList;
   }
 
+  
   /**
    * Create a repository object from a node.
    * 
