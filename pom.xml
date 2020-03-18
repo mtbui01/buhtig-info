@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.md.dpvo</groupId>
 	<artifactId>project-info</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<name>github-info</name>
 	<description>github-info</description>
 	<parent>
@@ -26,7 +26,7 @@
 		<developerConnection>scm:git:https://github.com/mtbui01/buhtig-info.git</developerConnection>
 		<connection>scm:git:https://github.com/mtbui01/buhtig-info.git</connection>
 		<url>https://github.com/mtbui01/buhtig-info.git</url>
-		<tag>project-info-1.0.0</tag>
+		<tag>HEAD</tag>
 	</scm>
 	
     <distributionManagement>
