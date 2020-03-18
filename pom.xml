@@ -35,7 +35,7 @@
       <repository>
        <id>github</id>
        <name>GitHub OWNER Apache Maven Packages</name>
-	   <url>https://maven.pkg.github.com/freenet-group/repo-info</url>
+	   <url>https://maven.pkg.github.com/mtbui01/buhtig-info</url>
       </repository>
     </distributionManagement>			
 	<dependencies>
