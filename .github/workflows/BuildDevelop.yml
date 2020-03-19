@@ -28,6 +28,6 @@ jobs:
       run: mvn -B clean deploy -Dserver.username=$GITHUB_ACTOR -Dserver.token=${{ secrets.GITHUB_TOKEN }} -s settings.xml --file pom.xml
     - name: Build Docker Images
       run: |
-        docker build -t docker.pkg.github.com/mtbui01/buhtig/project-info:1.0.3 .
-        docker push docker.pkg.github.com/mtbui01/buhtig/project-info:1.0.3
+        docker build -t docker.pkg.github.com/mtbui01/buhtig/project-info:1.0.3 --build-arg Github_Username=$GITHUB_ACTOR Github_token=${{ secrets.GITHUB_TOKEN }} .
+#        docker push docker.pkg.github.com/mtbui01/buhtig/project-info:1.0.3
         
