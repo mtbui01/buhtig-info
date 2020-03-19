@@ -26,8 +26,8 @@ jobs:
         java-version: 1.8
     - name: Build with Maven
       run: mvn -B clean deploy -Dserver.username=$GITHUB_ACTOR -Dserver.token=${{ secrets.GITHUB_TOKEN }} -s settings.xml --file pom.xml
-    - name: List Images
+    - name: Build Docker Images
       run: |
         docker build -t docker.pkg.github.com/mtbui01/buhtig/project-info:1.0.3 .
-        docker images ls
+        docker push docker.pkg.github.com/mtbui01/buhtig/project-info:1.0.3
         
