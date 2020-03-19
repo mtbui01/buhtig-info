@@ -32,5 +32,5 @@ jobs:
         repository: mtbui01/buhtig
         tags: 1.0.4
     - name: List Images
-      run; |
+      run: |
         docker images ls
