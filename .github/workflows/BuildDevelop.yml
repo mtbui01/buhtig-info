@@ -27,10 +27,10 @@ jobs:
     - name: Build with Maven
       run: mvn -B clean deploy -Dserver.username=$GITHUB_ACTOR -Dserver.token=${{ secrets.GITHUB_TOKEN }} -s settings.xml --file pom.xml
     - name: Login to GitHub Docker Registry
-        run: docker login docker.pkg.github.com --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
-        env:
-          DOCKER_USERNAME: ${{ secrets.Docker_Login_Name }}
-          DOCKER_PASSWORD: ${{ secrets. Docker_Login_Token }}      
+      run: docker login docker.pkg.github.com --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
+      env:
+        DOCKER_USERNAME: ${{ secrets.Docker_Login_Name }}
+        DOCKER_PASSWORD: ${{ secrets. Docker_Login_Token }}      
     - name: Build Docker Images
       run: |
         docker build -t docker.pkg.github.com/mtbui01/buhtig/project-info:1.0.3 --build-arg Github_Username=${{ secrets.App_Username }} --build-arg Github_token=${{ secrets.App_Token }} .
