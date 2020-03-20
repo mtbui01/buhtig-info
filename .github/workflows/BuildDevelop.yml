@@ -30,10 +30,9 @@ jobs:
       run: docker login docker.pkg.github.com --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
       env:
         DOCKER_USERNAME: ${{ secrets.Docker_Login_Name }}
-        DOCKER_PASSWORD: ${{ secrets. Docker_Login_Token }}      
+        DOCKER_PASSWORD: ${{ secrets.Docker_Login_Token }}      
     - name: Build Docker Images
       run: |
-        env
-        docker build -t docker.pkg.github.com/mtbui01/buhtig/project-info:1.0.3 --build-arg Github_Username=${{ secrets.App_Username }} --build-arg Github_token=${{ secrets.App_Token }} .
+        docker build -t docker.pkg.github.com/mtbui01/buhtig/project-info:1.0.3 --build-arg Github_Username=mtbui01 --build-arg Github_token=713b97a26dd643a67320646b54dfb0d191f2591e .
         docker push docker.pkg.github.com/mtbui01/buhtig/project-info:1.0.3
         
