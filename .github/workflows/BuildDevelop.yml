@@ -33,6 +33,6 @@ jobs:
         DOCKER_PASSWORD: ${{ secrets.Docker_Login_Token }}      
     - name: Build Docker Images
       run: |
-        docker build -t project-info:1.0.3 --build-arg App_Username=${{ secrets.App_Username }} --build-arg App_Token=${{ secrets.App_Token }} .
-        docker push project-info:1.0.3
+        docker build -t docker.pkg.github.com/mtbui01/buhtig/project-info:1.0.4 --build-arg App_Username=${{ secrets.App_Username }} --build-arg App_Token=${{ secrets.App_Token }} .
+        docker push docker.pkg.github.com/mtbui01/buhtig/project-info:1.0.4
         
