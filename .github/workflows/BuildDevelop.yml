@@ -29,7 +29,7 @@ jobs:
     - name: Build Docker Images
       run: |
         echo ${{ secrets.Docker_Login_Token }} | docker login docker.pkg.github.com --username ${{ secrets.Docker_Login_Name }} --password-stdin
-        docker build -t docker.pkg.github.com/mtbui01/buhtig/project-info:1.0.4 --build-arg App_Username=${{ secrets.App_Username }} --build-arg App_Token=${{ secrets.App_Token }} .
+        docker build -t docker.pkg.github.com/project-info:1.0.4 --build-arg App_Username=${{ secrets.App_Username }} --build-arg App_Token=${{ secrets.App_Token }} .
         docker image ls
-        docker push docker.pkg.github.com/mtbui01/buhtig/project-info:1.0.4
+        docker push docker.pkg.github.com/project-info:1.0.4
         
