@@ -28,8 +28,11 @@ jobs:
       run: mvn -B clean deploy -Dserver.username=$GITHUB_ACTOR -Dserver.token=${{ secrets.GITHUB_TOKEN }} -s settings.xml --file pom.xml
     - name: Build Docker Images
       run: |
-        echo ${{ secrets.Docker_Login_Token }} | docker login docker.pkg.github.com --username ${{ secrets.Docker_Login_Name }} --password-stdin
-        docker build -t docker.pkg.github.com/project-info:1.0.4 --build-arg App_Username=${{ secrets.App_Username }} --build-arg App_Token=${{ secrets.App_Token }} .
-        docker image ls
-        docker push docker.pkg.github.com/project-info:1.0.4
+#        echo ${{ secrets.Docker_Login_Token }} | docker login docker.pkg.github.com --username ${{ secrets.Docker_Login_Name }} --password-stdin
+        echo ${{ secrets.Dockerhub_Pwd }} | docker login registry.hub.docker.com --username ${{ secrets.Dockerhub_Login }} --password-stdin
+        docker build -t project-info:latest --build-arg App_Username=${{ secrets.App_Username }} --build-arg App_Token=${{ secrets.App_Token }} .
+#        docker tag project-info:latest docker.pkg.github.com/mtbui01/buhtig-info/project-info:latest
+#        docker push docker.pkg.github.com/mtbui01/buhtig-info/project-info:latest
+        docker tag project-info:latest registry.hub.docker.com/tribui2106/project-info:latest
+        docker push registry.hub.docker.com/tribui2106/project-info:latest
         
