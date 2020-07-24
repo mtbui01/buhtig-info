@@ -10,8 +10,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Sets Variable
       run: |
-        export BUILD_VERSION=1.2.0
-        echo "::set-env name=BUILD_VERSION::strawberry"
+        export BUILD_VERSION=1.2.2
+        echo "::set-env name=BUILD_VERSION::$BUILD_VERSION"
         env
     - name: Show Variable
       run: |
