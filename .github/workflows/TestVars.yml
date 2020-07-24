@@ -11,7 +11,7 @@ jobs:
     - name: Sets Variable
       run: |
         export BUILD_VERSION=1.2.0
-        echo "::set-output name=BUILD_VERSION::strawberry"
+        echo "::set-env name=BUILD_VERSION::strawberry"
         env
     - name: Show Variable
       run: |
