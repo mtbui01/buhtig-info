@@ -1,0 +1,21 @@
+name: Variable tests on Github
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Sets Variable
+      run: |
+        export BUILD_VERSION=1.2.2
+        echo "::set-env name=BUILD_VERSION::$BUILD_VERSION"
+        env
+    - name: Show Variable
+      run: |
+        echo "BUILD_VERSION='$BUILD_VERSION'"
+        env
+        
+        

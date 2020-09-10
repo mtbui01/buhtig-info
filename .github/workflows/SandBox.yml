@@ -1,0 +1,17 @@
+name: Sandbox for tests on Github
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: set up git
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"                    
+    - name: Sets Variable
+      run: |
+        docker login docker.pkg.github.com -u mtbui01 -p ${{ secrets.DOCKER_LOGIN_TOKEN }}
