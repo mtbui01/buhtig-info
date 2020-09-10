@@ -1,10 +1,10 @@
 # This workflow will build a Java project with Maven
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
-name: Release Event
+name: Deployment Event
 
 on:
-  release:
+  deployment:
 
 jobs:
   build:
@@ -17,6 +17,6 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"                    
-    - name: Release
+    - name: Deployment
       run: |
-        echo "Release event" 
+        echo "Deployment event" 
