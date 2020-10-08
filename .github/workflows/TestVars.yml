@@ -11,7 +11,7 @@ jobs:
     - name: Sets Variable
       run: |
         export BUILD_VERSION=1.2.2
-        echo "BUILD_VERSION::$BUILD_VERSION" >> $GITHUB_ENV
+        echo "BUILD_VERSION=$BUILD_VERSION" >> $GITHUB_ENV
         env
     - name: Show Variable
       run: |
