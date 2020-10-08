@@ -1,5 +1,7 @@
 name: Variable tests on Github
 
+env:
+  JAVA_TEST_OPT: "ASD"
 on:
   workflow_dispatch:
 
@@ -25,4 +27,3 @@ jobs:
     - name: Show Variable
       run: |
         echo "Java Home  = $JAVA_HOME_LOCAL"
-
