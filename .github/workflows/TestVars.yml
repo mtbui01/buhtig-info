@@ -21,7 +21,9 @@ jobs:
         echo "JAVA_TEST_OPT=$JAVA_TEST_OPT"
     - name: Modify environment variable
       run: |
-        JAVA_TEST_OPT="Modified JAVA_TEST_OPT"    
+        JAVA_TEST_OPT="Modified JAVA_TEST_OPT"
+        echo "modifed JAVA_TEST_OPT=$JAVA_TEST_OPT"
+            
   build_vars:
     runs-on: ubuntu-latest
     needs: build
