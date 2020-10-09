@@ -21,7 +21,7 @@ jobs:
         echo "JAVA_TEST_OPT=$JAVA_TEST_OPT"
     - name: Modify environment variable
       run: |
-        echo "JAVA_TEST_OPT='Modified JAVA_TEST_OPT'" >> $GTIHUB_ENV
+        echo "JAVA_TEST_OPT=Modified JAVA_TEST_OPT" >> $GTIHUB_ENV
         echo "modifed JAVA_TEST_OPT=$JAVA_TEST_OPT"
     - name: Show Variable after modification
       run: |
