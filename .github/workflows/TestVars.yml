@@ -25,7 +25,7 @@ jobs:
         echo "modifed JAVA_TEST_OPT=$JAVA_TEST_OPT"
     - name: Show Variable after modification
       run: |
-        echo "JAVA_TEST_OPT=$JAVA_TEST_OPT"
+        echo "after modification steps JAVA_TEST_OPT=$JAVA_TEST_OPT"
             
   build_vars:
     runs-on: ubuntu-latest
