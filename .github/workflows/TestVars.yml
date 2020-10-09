@@ -21,7 +21,7 @@ jobs:
         echo "JAVA_TEST_OPT=$JAVA_TEST_OPT"
     - name: Modify environment variable
       run: |
-        export JAVA_TEST_OPT=""Modified JAVA_TEST_OPT"
+        export JAVA_TEST_OPT="Modified JAVA_TEST_OPT"
         echo "modifed JAVA_TEST_OPT=$JAVA_TEST_OPT"
     - name: Show Variable after modification
       run: |
