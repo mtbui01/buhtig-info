@@ -18,8 +18,10 @@ jobs:
     - name: Show Variable
       run: |
         echo "BUILD_VERSION='$BUILD_VERSION'"
+        echo "JAVA_TEST_OPT=$JAVA_TEST_OPT"
   build_vars:
     runs-on: ubuntu-latest
+    needs: build
     steps:
     - name: Sets Variable
       run: |
@@ -27,3 +29,5 @@ jobs:
     - name: Show Variable
       run: |
         echo "Java Home  = $JAVA_HOME_LOCAL"
+        echo "BUILD_VERSION  = $BUILD_VERSION"
+        echo "JAVA_TEST_OPT=$JAVA_TEST_OPT"
