@@ -1,7 +1,7 @@
 name: Variable tests on Github
 
 env:
-  JAVA_TEST_OPT: "Workflow env Opt"
+  JAVA_TEST_OPT: "Initial Workflow env Opt"
 on:
   workflow_dispatch:
 
@@ -23,6 +23,9 @@ jobs:
       run: |
         JAVA_TEST_OPT="Modified JAVA_TEST_OPT"
         echo "modifed JAVA_TEST_OPT=$JAVA_TEST_OPT"
+    - name: Show Variable after modification
+      run: |
+        echo "JAVA_TEST_OPT=$JAVA_TEST_OPT"
             
   build_vars:
     runs-on: ubuntu-latest
