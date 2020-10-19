@@ -17,7 +17,7 @@
 		<wiremock.version>2.27.1</wiremock.version>
 		<mariadb.jdbc.version>1.1.7</mariadb.jdbc.version>
 		<jaxb.version>2.2.11</jaxb.version>
-		<mockserver.version>3.10.4</mockserver.version>
+		<mockserver.version>3.12</mockserver.version>
 		<rest-assured.version>3.0.3</rest-assured.version>
 		<jib-maven-plugin.version>1.5.0</jib-maven-plugin.version>
 		<prometheus.version>0.8.1</prometheus.version>
