@@ -27,18 +27,18 @@ jobs:
         mvn -B release:prepare release:perform -DtagNameFormat=$BUILD_VERSION -Dserver.username=$GITHUB_ACTOR -Dserver.token=${{ secrets.GITHUB_TOKEN }} -s settings.xml --file pom.xml
         echo "BUILD_VERSION=$BUILD_VERSION" >> $GITHUB_ENV
         echo "BUID_ARTIFACT=$BUID_ARTIFACT" >> $GITHUB_ENV
-    - name: Create Release
-      id: create-release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: ${{ env.BUILD_VERSION }}
-        release_name: ${{ env.BUILD_VERSION }}
-        body: |
-          Changes in this Release:
-        draft: false
-        prerelease: false
+#    - name: Create Release
+#      id: create-release
+#      uses: actions/create-release@v1
+#      env:
+#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#      with:
+#        tag_name: ${{ env.BUILD_VERSION }}
+#        release_name: ${{ env.BUILD_VERSION }}
+#        body: |
+#          Changes in this Release:
+#        draft: false
+#        prerelease: false
 #    - name: Upload Release Asset
 #      id: upload-release-asset 
 #      uses: actions/upload-release-asset@v1
