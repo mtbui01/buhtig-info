@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.md.dpvo</groupId>
 	<artifactId>buhtig-info</artifactId>
-	<version>1.0.7</version>
+	<version>1.0.8-SNAPSHOT</version>
 	<name>buhtig-info</name>
 	<description>buhtig-info</description>
 	<parent>
@@ -26,7 +26,7 @@
 		<developerConnection>scm:git:https://github.com/mtbui01/buhtig-info.git</developerConnection>
 		<connection>scm:git:https://github.com/mtbui01/buhtig-info.git</connection>
 		<url>https://github.com/mtbui01/buhtig-info.git</url>
-		<tag>buhtig-info-1.0.7</tag>
+		<tag>HEAD</tag>
 	</scm>
 	
     <distributionManagement>
