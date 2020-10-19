@@ -24,7 +24,7 @@ jobs:
       run: |
         BUID_ARTIFACT=$(mvn help:evaluate -Dexpression=project.artifactId -q -DforceStdout)       
         BUILD_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout | sed 's/-SNAPSHOT//g')
-        mvn -B release:prepare release:perform -Dserver.username=$GITHUB_ACTOR -Dserver.token=${{ secrets.GITHUB_TOKEN }} -s settings.xml --file pom.xml
+        mvn -B release:prepare release:perform -DtagNameFormat=$BUILD_VERSION -Dserver.username=$GITHUB_ACTOR -Dserver.token=${{ secrets.GITHUB_TOKEN }} -s settings.xml --file pom.xml
         echo "BUILD_VERSION=$BUILD_VERSION" >> $GITHUB_ENV
         echo "BUID_ARTIFACT=$BUID_ARTIFACT" >> $GITHUB_ENV
 #    - name: Create Release
