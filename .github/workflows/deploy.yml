@@ -2,6 +2,7 @@ name: Deployment Event
 
 on:
   deployment:
+  workflow_dispatch:
     inputs:
       version:
         description: Release Version
