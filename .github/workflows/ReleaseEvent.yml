@@ -2,7 +2,7 @@ name: Release Event
 
 on:
   release:
-    types: [created]
+    types: [created,published,released]
 jobs:
   build:
     runs-on: ubuntu-latest
