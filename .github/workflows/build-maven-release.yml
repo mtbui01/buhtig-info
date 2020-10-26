@@ -24,28 +24,30 @@ jobs:
       run: |
         BUID_ARTIFACT=$(mvn help:evaluate -Dexpression=project.artifactId -q -DforceStdout)       
         BUILD_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout | sed 's/-SNAPSHOT//g')
-        mvn -B release:prepare release:perform -DtagNameFormat=$BUILD_VERSION -Dserver.username=$GITHUB_ACTOR -Dserver.token=${{ secrets.GITHUB_TOKEN }} -s settings.xml --file pom.xml
+        mvn -B -DtagNameFormat=$BUILD_VERSION -Dserver.username=$GITHUB_ACTOR -Dserver.token=${{ secrets.GITHUB_TOKEN }} \
+          -s settings.xml --file pom.xml \
+          release:prepare release:perform 
         echo "BUILD_VERSION=$BUILD_VERSION" >> $GITHUB_ENV
         echo "BUID_ARTIFACT=$BUID_ARTIFACT" >> $GITHUB_ENV
-#    - name: Create Release
-#      id: create-release
-#      uses: actions/create-release@v1
-#      env:
-#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#      with:
-#        tag_name: ${{ env.BUILD_VERSION }}
-#        release_name: ${{ env.BUILD_VERSION }}
-#        body: |
-#          Changes in this Release:
-#        draft: false
-#        prerelease: false
-#    - name: Upload Release Asset
-#      id: upload-release-asset 
-#      uses: actions/upload-release-asset@v1
-#      env:
-#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#      with:
-#        upload_url: ${{ steps.create-release.outputs.upload_url }}  
-#        asset_path: ./target/${{ env.BUID_ARTIFACT }}-${{ env.BUILD_VERSION }}.jar
-#        asset_name: ${{ env.BUID_ARTIFACT }}-${{ env.BUILD_VERSION }}.jar
-#        asset_content_type: application/jar
+    - name: Create Release
+      id: create-release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ env.BUILD_VERSION }}
+        release_name: ${{ env.BUILD_VERSION }}
+        body: |
+          New Release: ${{ env.BUILD_VERSION }}
+        draft: false
+        prerelease: false
+    - name: Upload Release Asset
+      id: upload-release-asset 
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create-release.outputs.upload_url }}  
+        asset_path: ./target/${{ env.BUID_ARTIFACT }}-${{ env.BUILD_VERSION }}.jar
+        asset_name: ${{ env.BUID_ARTIFACT }}-${{ env.BUILD_VERSION }}.jar
+        asset_content_type: application/jar
