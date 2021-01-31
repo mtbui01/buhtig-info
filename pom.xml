@@ -20,7 +20,7 @@
 		<mockserver.version>3.10.4</mockserver.version>
 		<rest-assured.version>3.0.3</rest-assured.version>
 		<jib-maven-plugin.version>1.5.0</jib-maven-plugin.version>
-		<prometheus.version>0.8.1</prometheus.version>
+		<prometheus.version>0.10.0</prometheus.version>
 	</properties>
 	<scm>
 		<developerConnection>scm:git:https://github.com/mtbui01/buhtig-info.git</developerConnection>
